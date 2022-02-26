@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/bodycontent.css" />
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="content-header">
+        <div class="logo">
+          <!-- <img src="" alt=""> -->
+          LOGO
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="">Inicio</a>
+            </li>
+            <li>
+              <a href="">Tareas</a>
+            </li>
+            <li>
+              <a href="">Acerca de mi</a>
+            </li>
+            <li>
+              <a href="">Contactame</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="image-header"></div>
+    </header>
+    <div class="content-body">
+      <div class="tittle">
+        <h1>Curso Javascript</h1>
+        <h2>Creacion de una calculadora</h2>
+      </div>
+      <div class="box">
+        <h3 style="text-align: center; margin-bottom: 0.5em;">CASIO</h3>
+        <div class="input-box">
+          <input id="input-number" type="text" placeholder="0" onkeypress="GetChange(e)"  />
+        </div>
+        <div class="content-center">
+          <section class="content-calculator">
+            <div class="box-numbers">
+              <button onclick="PressNumber('1')">1</button>
+              <button onclick="PressNumber('2')">2</button>
+              <button onclick="PressNumber('3')">3</button>
+              <button onclick="PressNumber('4')">4</button>
+              <button onclick="PressNumber('5')">5</button>
+              <button onclick="PressNumber('6')">6</button>
+              <button onclick="PressNumber('7')">7</button>
+              <button onclick="PressNumber('8')">8</button>
+              <button onclick="PressNumber('9')">9</button>
+              <button></button>
+              <button onclick="PressNumber('0')">0</button>
+              <button></button>
+            </div>
+            <div class="box-operations">
+              <button onclick="PressOperation('+')">+</button>
+              <button onclick="PressOperation('-')">-</button>
+              <button onclick="PressOperation('*')">*</button>
+              <button onclick="PressOperation('/')">/</button>
+              <button onclick="Calculate()">=</button>
+              <button></button>
+            </div>
+
+            <!-- <section>
+                            <label for="num1">Primer numero</label>
+                            <input id="num1" type="number">   
+                        </section>
+                        <section>
+                            <label for="num2">Segundo numero</label>
+                            <input id="num2" type="number">
+                        </section>        
+                        <section >
+                            <div id="result"></div>
+                        </section>
+                        <button onclick="PlayOperation()">Calcular</button>
+                        <select name="operations" id="calculate">
+                            <option value="selection" selected disabled>Elija una operacion</option>
+                            <option value="suma">Sumar</option>
+                            <option value="resta">Restar</option>
+                            <option value="division">Dividir</option>
+                            <option value="multiplicacion">Multiplicar</option>
+                        </select> -->
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer>
+        <div>
+            <h4>
+                Logo
+            </h4>
+       <h4>
+           Todos los derechos recervados 2022
+       </h4>
+       <h4>
+           v1.0
+       </h4>
+        </div>
+       
+    </footer>
+
+    <script src="./JS/main.js"></script>
+    <script src="./JS/calculator.js"></script>
+  </body>
+</html>
