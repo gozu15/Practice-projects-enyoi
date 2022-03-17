@@ -7,52 +7,71 @@ function Calculate(){
     let divide = getoperation.indexOf('/');
     let index =0;
     let checkOperationstodo = CountOperationsInString(getoperation);
-   while(checkOperationstodo >=0){
+  // while(checkOperationstodo >=0){
     
         if(multiply!= -1){
            
             //checkOperationstodo =0;
-            multiply = valueaux.indexOf('*');   
-            checkOperationstodo -= 1
+            // multiply = valueaux.indexOf('*');   
+            //checkOperationstodo -= 1
+            input.value = ResolveOperation(input.value,multiply)
+
             console.log("MUTI2",multiply);
             console.log("check2",checkOperationstodo);
         }
         else{
-            checkOperationstodo =0;
-            // if(divide != -1){
-            //     let operation = getoperation[multiply-1]+getoperation[multiply] + getoperation[multiply+1];
-            // console.log(operation)
-            // }
-            // else if(sum != -1){
-            //     let operation = getoperation[multiply-1]+getoperation[multiply] + getoperation[multiply+1];
-            // console.log(operation)
-            // }
-            // else if(rest !=-1){
-            //     let operation = getoperation[multiply-1]+getoperation[multiply] + getoperation[multiply+1];
-            // console.log(operation)
-            // }
-        }
-       
-      
+            
+            if(divide != -1){
+                // multiply = valueaux.indexOf('/');   
+            checkOperationstodo -= 1
+            input.value = ResolveOperation(input.value,divide)
+
+            }
+            else if(sum != -1){
+                // multiply = valueaux.indexOf('+');   
+            checkOperationstodo -= 1
+            input.value = ResolveOperation(input.value,sum)
+
+            }
+            else if(rest !=-1){
+                // multiply = valueaux.indexOf('-');   
+            checkOperationstodo -= 1
+            input.value = ResolveOperation(input.value,rest)
+
+            }
+        }     
         //checkOperationstodo = CountOperationsInString(input.value);
-        console.log("input",input.value);
-   }
+        
+   //}
     
 }
-function ResolveOperation(poperation){
-    let valueaux = poperation;   
-    
-    let numberoneaux = valueaux[multiply-1];
-    let operationaux = valueaux[multiply];
-    let numbertwoaux= valueaux[multiply+1];
+function ResolveOperation(poperation,position){
+    let valueaux = poperation;  
+    let buildnumberone=""; 
+    let buildnumbertwo="";
+    //TODO 
+    for (let index = 0; index < position; index++) {
+        const element = poperation[index];
+        buildnumberone = buildnumberone+element;
+    }
+
+    for (let index = position+1; index <= poperation.length -1; index++) {
+        const element = poperation[index];
+        buildnumbertwo = buildnumbertwo+element;
+    }
+
+    let numberoneaux = buildnumberone;
+    let operationaux = valueaux[position];
+    let numbertwoaux= buildnumbertwo;
     let auxoperacion = numberoneaux+operationaux+numbertwoaux;
-   console.log("multi",multiply);
+   //console.log("multi",multiply);
+   console.log("AUXOPER",auxoperacion)
 
     let result = ExecuteOperation(numberoneaux,numbertwoaux,operationaux);
-    let aux = input.value;
+    let aux = poperation;
     
     aux = aux.replace(""+auxoperacion,""+result);               
-    input.value = aux;           
+    return aux;    
    
 }
 
@@ -124,8 +143,15 @@ function CountOperationsInString(string){
     return cont;  
 }
 
-function GetChange(e){
+function GetChange(){
     console.log("Op",e);
+    let input = document.getElementById('input-number');
+    input.addEventListener('keyup',function (){
+        let keycode = e.keyCode || e.which;
+        if (keycode == 13) {
+            alert("Enter!");
+        }
+    })
 }
 
 function Sum(numOne,numTwo){
