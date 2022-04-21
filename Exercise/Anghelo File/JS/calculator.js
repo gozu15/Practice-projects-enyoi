@@ -143,16 +143,16 @@ function CountOperationsInString(string){
     return cont;  
 }
 
-function GetChange(){
-    console.log("Op",e);
+
     let input = document.getElementById('input-number');
-    input.addEventListener('keyup',function (){
-        let keycode = e.keyCode || e.which;
+    input.addEventListener('keyup',function(e){
+        let keycode = e.keyCode;
+        console.log(keycode)
         if (keycode == 13) {
-            alert("Enter!");
+           Calculate()           
         }
     })
-}
+
 
 function Sum(numOne,numTwo){
     return parseInt(numOne) + parseInt(numTwo);
@@ -165,4 +165,8 @@ function Multiply(numOne,numTwo){
 }
 function Divide(numOne,numTwo){
     return parseInt(numOne) / parseInt(numTwo);
+}
+function ClearData(){
+    let input = document.getElementById("input-number");
+    input.value = null;
 }

@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Jhonatan",
+        "lastname":"Rosas",
+        "user":"mrjhon",
+        "password":"jhon123",
+        "email":"jhoss@gmail.com"
+    },
+    {
+        "name":"Admin",
+        "lastname":"Admin",
+        "user":"admin",
+        "password":"toor123",
+        "email":"admin@gmail.com"
+    },
+    {
+        "name":"Anghelo",
+        "lastname":"Rodriguez",
+        "user":"acher",
+        "password":"angelgozu3",
+        "email":"acherfun99@gmail.com"
+    }
+]
