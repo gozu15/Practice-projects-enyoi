@@ -10,3 +10,8 @@ npm install -g json-server
 
 ejecutar archivo JSON del proyecto
 json-server --watch config/accounts.json
+
+Acceder al login mediante las cuentas registradas
+ejemplo
+usuario: admin
+password: toor123
