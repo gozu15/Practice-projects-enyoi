@@ -1,0 +1,54 @@
+{
+    "accounts":
+    [
+        {
+            "name":"Jhonatan",
+            "lastname":"Rosas",
+            "user":"mrjhon",
+            "password":"jhon123",
+            "email":"jhoss@gmail.com"
+        },
+        {
+            "name":"Admin",
+            "lastname":"Admin",
+            "user":"admin",
+            "password":"toor123",
+            "email":"admin@gmail.com"
+        },
+        {
+            "name":"Anghelo",
+            "lastname":"Rodriguez",
+            "user":"acher",
+            "password":"angelgozu3",
+            "email":"acherfun99@gmail.com"
+        }
+    ],
+
+    "products":
+    [
+        {
+            "id":"1",
+            "name":"Cocacola",
+            "image":"cocacola",
+            "amount":"15",
+            "description":"Tomate una cocacola"      
+            },
+            
+            {
+                "id":"2",
+                "name":"Pepsi",
+                "image":"pepsi",
+                "amount":"10",
+                "description":"Cocacola da cancer, tomate una pepsi"           
+            },
+             
+            {
+                "id":"3",
+                "name":"Papafritas",
+                "image":"papas",
+                "amount":"120",
+                "description":"Las mejores papitas del sur"            
+            }
+    ]
+}
+    

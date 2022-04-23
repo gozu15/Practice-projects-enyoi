@@ -1,0 +1,67 @@
+.content-body{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 1em;   
+}
+.tittle{
+    padding: 1.5em;
+    text-align: center;
+}
+.tittle h1{
+    margin-bottom: 10px;
+}
+.input-box{
+    display: flex;
+    justify-content: center;    
+    width: 100% ;
+}
+.input-box input{
+    height: 30px;
+    font-size: 25px;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.content-center{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+.box{
+    border: 2px solid grey;
+    border-radius:22px;
+    width: 250px;    
+    margin: auto;
+    padding: 2em;
+}
+.content-calculator{
+    display: inline-flex;
+    align-content: center;
+}
+
+.box-numbers{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box-numbers button{
+    width: 33.33%;
+    font-size: 25px;
+    cursor: pointer;
+}
+.box-numbers button:hover{
+    background-color: brown;
+    color: white;
+}
+.box-operations{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box-operations button{
+    width: 50%;
+    font-size: 30px;
+    cursor: pointer;
+}
+.box-operations button:hover{
+    background-color: brown;
+    color: white;
+}
