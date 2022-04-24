@@ -19,12 +19,11 @@ let myapp = (function(){
             amount,
             image:base64String
         }   
-        data.push(product_new);
-       
-        //id= product_new.id;
+        data.push(product_new);      
+        
         localStorage.setItem('product',JSON.stringify(data));        
         Init();
-        console.log("SUMBIT",product_new)
+       
     }  
 
     function DeleteProduct(row){
@@ -73,8 +72,7 @@ let myapp = (function(){
 
         localStorage.setItem('product',JSON.stringify(list))
         Init()
-        CancelUpdateProduct();
-        console.log('check',list);
+        CancelUpdateProduct();        
     }
 
     function CancelUpdateProduct(){        
@@ -94,11 +92,8 @@ let myapp = (function(){
     }
 
     function ViewMore(row){
-//         id name
-// image
-// amount
-// description
         window.location.href = `../products_component/viewmore.html?id=${row.id}&name=${row.name}&amount=${row.amount}&description=${row.description}`;
+        localStorage.setItem('image',JSON.stringify(row.image));
         console.log("VIEWMORE")
     }
     
@@ -193,7 +188,7 @@ let myapp = (function(){
     
             
         })  
-        console.log("TR",table);   
+         
     }
 
    
@@ -223,11 +218,7 @@ let myapp = (function(){
                 let file = event.target.files[0];
                 var reader = new FileReader();               
                 reader.onload = function () {
-                    base64String = reader.result
-                    // .replace("data:", "")
-                    //     .replace(/^.+,/, "");           
-                   
-                    console.log(base64String);
+                    base64String = reader.result                   
                 }
                 reader.readAsDataURL(file);
                 
