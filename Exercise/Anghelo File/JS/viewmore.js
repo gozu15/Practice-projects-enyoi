@@ -5,19 +5,61 @@ const form = (()=>{
     let get_variables = url.split('?');
     let stringvar= get_variables[1];
     let array=[];
-    let check_var
-    for (let index = 0; index < 4; index++) {       
-        check_var= stringvar.indexOf('=');
-        console.log("ORIGI",stringvar);
-        console.log("ORIGI",check_var);
-        array.push(stringvar[check_var+1]);
-        stringvar.replace('=','+') 
-        console.log(stringvar[check_var]);
+    let check_var=stringvar.split('=')
+    function checkUrl(){        
+       for (let index = 1; index < check_var.length; index++) {
+           let element = check_var[index];
+           let bool = element.includes('&')
+           let garbage =element.includes('%20')
+           if(bool){
+               let checking = element.split('&')
+               array.push(checking[0]);
+           }
+           else{
+                if(garbage){
+                   element= changeGarbageFromString(element,"%20"," ")
+                   array.push(element)
+                }
+                else{
+                    array.push(element);
+                }
+           }
+       }   
+       let getImage= JSON.parse(localStorage.getItem('image')) != "" ? JSON.parse(localStorage.getItem('image')) :"../assets/images/nodata.jpg"
+
+       let idprod = document.getElementById('id_product')
+       let titleidprod = document.createElement('h3')
+       titleidprod.textContent=`Id:${array[0]}`
+       idprod.appendChild(titleidprod); 
+
+       let name = document.getElementById('name_product')
+       let titlename = document.createElement('h3')
+       titlename.textContent=`Nombre:${array[1]}`
+       name.appendChild(titlename); 
+
+       let description = document.getElementById('description_product')
+       let titledescription = document.createElement('h3')
+       titledescription.textContent=`Descripcion:${array[2]}`
+       description.appendChild(titledescription); 
+
+       let amount = document.getElementById('amount_product')
+       let titleamount = document.createElement('h3')
+       titleamount.textContent=`Cantidad:${array[3]}`
+       amount.appendChild(titleamount); 
+
+       let image = document.getElementById('imge_product')
+       let img = document.createElement('img')
+       img.src=getImage
+       img.style.width="150px"
+       img.style.height ="170px"
+       image.appendChild(img); 
+    
     }
-    // url = unescape(url);
-    // url = url.replace(remplaza, " ");
-    // url = url.toUpperCase();
-    console.log(array);
+    function changeGarbageFromString(string,garbage,newchar){        
+        string = string.replace(new RegExp(garbage,"gi"),newchar);        
+        return string;
+    }
+    
 
     function obtener_valor(variable) {
         //var variable_may = variable.toUpperCase();
@@ -32,11 +74,16 @@ const form = (()=>{
        },
        GoBack: function(){
            return document.getElementById("btnback").addEventListener('click',()=>{
+               localStorage.setItem('image',"")
                window.location.href = "../products_component/main.html"
                 console.log("VIEWMORE") 
            })
-       } 
+       },
+       checkUrl: function(){
+           return checkUrl();
+       }
    }
 })()
 form.GoBack();
+form.checkUrl();
 
